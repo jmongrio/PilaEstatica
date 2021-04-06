@@ -1,7 +1,7 @@
 # PilaEstatica
 
 ## Table of contents
-* [Información General](#infomación-General)
+* [Información General](#Información-General)
 * [Leguajes de programación](#Leguajes-de-programación)
 
 ## Información General
