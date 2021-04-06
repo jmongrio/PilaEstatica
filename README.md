@@ -1,4 +1,4 @@
-# PilaEstatica
+# Pila Estática
 
 ## Table of contents
 * [Información General](#Información-General)
