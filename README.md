@@ -1,8 +1,11 @@
 # PilaEstatica
 
 ## Table of contents
-* [Información General](#general-info)
+* [Información General](#info)
+* [Leguajes de programación](#lenguajes)
 
 ## Información General
- Proyecto para la Universidad Estatal a Distancia de Costa Rica.
- Se aplica el concepto de pila estática utilizando Java.
+ Proyecto para la Universidad Estatal a Distancia de Costa Rica en el cual se aplica el concepto de pila estática.
+ 
+## Leguajes de programación
+* JAVA.
