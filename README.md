@@ -12,10 +12,10 @@
 ## Leguajes de programación
 * JAVA.
 
-## Explicación:
+## Explicación
 Una pila es una estructura de datos donde el último elemento en ingresar es el primero en salir (LIFO: Last in, First out). Por ejemplo, podemos mencionar una serie de platos sucios apilados formando una torre, donde el último plato que se coloca en la pila, el de encima, será el primero en ser lavado, y así sucesivamente hasta llegar al plato que quedó al fondo, el primero en llegar, quien precisamente será el último en ser lavado.
 
-## Desarrollo:
+## Desarrollo
 Se deberá crear una aplicación Java, donde el usuario podrá utilizar un menú con las siguientes opciones:
 1. Crear pila. En esta opción se le debe pedir al usuario el tamaño de la misma. Utilizar un vector de clases "Película", la cual tendrá como atributos:
 * Identificador (int)
