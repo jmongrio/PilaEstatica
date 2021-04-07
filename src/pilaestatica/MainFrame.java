@@ -383,7 +383,21 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_txtDirectorKeyTyped
 
     private void btnDesapilarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDesapilarMouseClicked
+        int dialogButton = JOptionPane.showConfirmDialog(null, "Se eliminara el siguiente registro."
+                + "ID: " + listMovie[count].getId() +
+                "/n Nombre: " + listMovie[count].getNombre() +
+                "/n Director: " + listMovie[count].getDirector() + 
+                "/n Duración=" + listMovie[count].getDuracion(), 
+                "Exito", JOptionPane.YES_NO_OPTION);
         
+        if(dialogButton == JOptionPane.YES_OPTION)
+        {
+//            Eliminar elemento de la pila
+        }
+        else
+        {
+//            No hacer nada
+        }
     }//GEN-LAST:event_btnDesapilarMouseClicked
 
     public Pelicula GetData()
@@ -411,7 +425,7 @@ public class MainFrame extends javax.swing.JFrame
     {
         if(count != listMovie.length)
         {
-            listMovie[count] = GetData();   
+            listMovie[count] = GetData();
             count++;
         }
         else
