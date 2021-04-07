@@ -19,7 +19,9 @@ public class Pelicula
         this.nombre = nombre;
         this.director = director;
         this.duracion = duracion;
-    }    
+    } // Constructor
+    
+    public Pelicula() {} //Constructor vacio
 
     public int getId()
     {
