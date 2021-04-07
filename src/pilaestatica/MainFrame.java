@@ -13,8 +13,9 @@ import javax.swing.JOptionPane;
 public class MainFrame extends javax.swing.JFrame
 {
     int vectorSize; // Almacena el tamaño del vector.
+    int count = 0; // Contador de iteraciónes de pila.
     
-    Pelicula[] movie;
+    Pelicula[] listMovie;
     
     /**
      Creates new form MainFrame
@@ -55,10 +56,10 @@ public class MainFrame extends javax.swing.JFrame
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtID = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtDirector = new javax.swing.JTextField();
+        txtDuracion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pila estática");
@@ -109,6 +110,13 @@ public class MainFrame extends javax.swing.JFrame
 
         spnVectorSize.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         spnVectorSize.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        spnVectorSize.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                spnVectorSizeKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlCrearPilaLayout = new javax.swing.GroupLayout(pnlCrearPila);
         pnlCrearPila.setLayout(pnlCrearPilaLayout);
@@ -160,13 +168,41 @@ public class MainFrame extends javax.swing.JFrame
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel6.setText("Duración:");
 
-        jTextField1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtID.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtID.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                txtIDKeyTyped(evt);
+            }
+        });
 
-        jTextField2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtNombre.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                txtNombreKeyTyped(evt);
+            }
+        });
 
-        jTextField3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtDirector.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtDirector.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                txtDirectorKeyTyped(evt);
+            }
+        });
 
-        jTextField4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtDuracion.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtDuracion.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                txtDuracionKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlApilarLayout = new javax.swing.GroupLayout(pnlApilar);
         pnlApilar.setLayout(pnlApilarLayout);
@@ -180,22 +216,22 @@ public class MainFrame extends javax.swing.JFrame
                         .addGap(6, 6, 6)
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField4))
+                        .addComponent(txtDuracion))
                     .addGroup(pnlApilarLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField3))
+                        .addComponent(txtDirector))
                     .addGroup(pnlApilarLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField2))
+                        .addComponent(txtNombre))
                     .addGroup(pnlApilarLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1)))
+                        .addComponent(txtID)))
                 .addContainerGap())
         );
         pnlApilarLayout.setVerticalGroup(
@@ -204,19 +240,19 @@ public class MainFrame extends javax.swing.JFrame
                 .addContainerGap()
                 .addGroup(pnlApilarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlApilarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlApilarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDirector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlApilarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnApilar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -290,11 +326,11 @@ public class MainFrame extends javax.swing.JFrame
     {//GEN-HEADEREND:event_btnCrearPilaMouseClicked
         vectorSize = (int) spnVectorSize.getValue();
         
-        int dialogButton = JOptionPane.showConfirmDialog(null, "¿Desea crear un vector de " + vectorSize + " espacios?", "Conformar", JOptionPane.YES_NO_OPTION);
+        int dialogButton = JOptionPane.showConfirmDialog(null, "¿Desea crear un vector de " + vectorSize + " espacios?", "Confirmar", JOptionPane.YES_NO_OPTION);
                 
         if(dialogButton == 0)
         {
-            movie = new Pelicula[vectorSize]; // Se crea el vector Pelicula de tamaño vectorSize.
+            listMovie = new Pelicula[vectorSize]; // Se crea el vector Pelicula de tamaño vectorSize.
             JOptionPane.showMessageDialog(null, "Se ha creado un nuevo vector.", "Exito", JOptionPane.INFORMATION_MESSAGE);
         }
         else
@@ -308,9 +344,89 @@ public class MainFrame extends javax.swing.JFrame
        
     private void btnApilarMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_btnApilarMouseClicked
     {//GEN-HEADEREND:event_btnApilarMouseClicked
-        int length = movie.length;
+        AddData();
     }//GEN-LAST:event_btnApilarMouseClicked
 
+    private void txtIDKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_txtIDKeyTyped
+    {//GEN-HEADEREND:event_txtIDKeyTyped
+        validateNumbers(evt);
+    }//GEN-LAST:event_txtIDKeyTyped
+
+    private void spnVectorSizeKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_spnVectorSizeKeyTyped
+    {//GEN-HEADEREND:event_spnVectorSizeKeyTyped
+        validateNumbers(evt);
+    }//GEN-LAST:event_spnVectorSizeKeyTyped
+
+    private void txtDuracionKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_txtDuracionKeyTyped
+    {//GEN-HEADEREND:event_txtDuracionKeyTyped
+        validateNumbers(evt);
+    }//GEN-LAST:event_txtDuracionKeyTyped
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_txtNombreKeyTyped
+    {//GEN-HEADEREND:event_txtNombreKeyTyped
+        validateChar(evt);
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtDirectorKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_txtDirectorKeyTyped
+    {//GEN-HEADEREND:event_txtDirectorKeyTyped
+        validateChar(evt);
+    }//GEN-LAST:event_txtDirectorKeyTyped
+
+    public Pelicula GetData()
+    {
+        Pelicula newMovie = new Pelicula();
+        
+         try
+        {
+            newMovie.setId(Integer.parseInt(txtID.getText()));
+            newMovie.setNombre(txtNombre.getText());
+            newMovie.setDirector(txtDirector.getText());
+            newMovie.setDuracion(Integer.parseInt(txtDuracion.getText()));
+            
+            JOptionPane.showMessageDialog(null, "Se ha agregado la información correctamente.", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        }
+        catch(Exception err)
+        {
+            JOptionPane.showMessageDialog(null, "Se ha detectado un error: " + err, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+         
+        return newMovie;
+    }
+    
+    public void AddData()
+    {
+        if(count != listMovie.length)
+        {
+            listMovie[count] = GetData();   
+            count++;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Se ha alcanzado el número máximo de elementos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    /**
+    * @param evt evento para validar la entrada 
+    */
+    public void validateNumbers(java.awt.event.KeyEvent evt)
+    {
+        char c = evt.getKeyChar();
+        
+        if(c < '0' || c > '9') evt.consume();
+    }
+    
+    /**
+    * @param evt evento para validar la entrada 
+    */
+    public void validateChar(java.awt.event.KeyEvent evt)
+    {
+        char c = evt.getKeyChar();
+        
+        if((c < 'a' || c > 'z') && (c < 'A' || c > 'Z')) evt.consume();
+    }
+    
+    
     /**
      @param args the command line arguments
      */
@@ -371,12 +487,12 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel pnlApilar;
     private javax.swing.JPanel pnlCrearPila;
     private javax.swing.JSpinner spnVectorSize;
+    private javax.swing.JTextField txtDirector;
+    private javax.swing.JTextField txtDuracion;
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
