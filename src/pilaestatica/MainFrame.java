@@ -36,7 +36,8 @@ public class MainFrame extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         btnPilaVacia = new javax.swing.JButton();
         btnMostrarValor = new javax.swing.JButton();
@@ -75,8 +76,10 @@ public class MainFrame extends javax.swing.JFrame
 
         btnTerminar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnTerminar.setText("Terminar");
-        btnTerminar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        btnTerminar.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 btnTerminarMouseClicked(evt);
             }
         });
@@ -89,8 +92,10 @@ public class MainFrame extends javax.swing.JFrame
 
         btnCrearPila.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnCrearPila.setText("Crear Pila");
-        btnCrearPila.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        btnCrearPila.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 btnCrearPilaMouseClicked(evt);
             }
         });
@@ -100,8 +105,10 @@ public class MainFrame extends javax.swing.JFrame
 
         spnVectorSize.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         spnVectorSize.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        spnVectorSize.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+        spnVectorSize.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 spnVectorSizeKeyTyped(evt);
             }
         });
@@ -136,8 +143,10 @@ public class MainFrame extends javax.swing.JFrame
 
         btnApilar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnApilar.setText("Apilar");
-        btnApilar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        btnApilar.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 btnApilarMouseClicked(evt);
             }
         });
@@ -155,29 +164,37 @@ public class MainFrame extends javax.swing.JFrame
         jLabel6.setText("Duración:");
 
         txtID.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtID.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+        txtID.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 txtIDKeyTyped(evt);
             }
         });
 
         txtNombre.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 txtNombreKeyTyped(evt);
             }
         });
 
         txtDirector.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtDirector.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+        txtDirector.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 txtDirectorKeyTyped(evt);
             }
         });
 
         txtDuracion.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        txtDuracion.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+        txtDuracion.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 txtDuracionKeyTyped(evt);
             }
         });
@@ -240,14 +257,23 @@ public class MainFrame extends javax.swing.JFrame
 
         btnDesapilar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnDesapilar.setText("Desapilar");
-        btnDesapilar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        btnDesapilar.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 btnDesapilarMouseClicked(evt);
             }
         });
 
         btnMostrarTamano.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnMostrarTamano.setText("Mostrar Tamaño");
+        btnMostrarTamano.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                btnMostrarTamanoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -399,6 +425,21 @@ public class MainFrame extends javax.swing.JFrame
 //            No hacer nada
         }
     }//GEN-LAST:event_btnDesapilarMouseClicked
+
+    private void btnMostrarTamanoMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_btnMostrarTamanoMouseClicked
+    {//GEN-HEADEREND:event_btnMostrarTamanoMouseClicked
+        int items = 0;
+        
+        for(int i = 0; i < vectorSize; i++)
+        {
+            if(listMovie[i] != null)
+            {
+                items++;
+            }
+        }
+        
+        JOptionPane.showMessageDialog(null, "El tamaño del arreglo es de " + items + " espacios.", "Exito", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnMostrarTamanoMouseClicked
 
     public Pelicula GetData()
     {
